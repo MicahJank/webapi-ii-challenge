@@ -11,7 +11,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import allReducers from './reducers';
 
-const enhancer = compose(applyMiddleware(thunk, logger)); // logger must allways be at the end of apply middleware
+const enhancer = compose(applyMiddleware(thunk, logger)); // logger must always be at the end of apply middleware
 const store = createStore(allReducers, enhancer);
 
 ReactDOM.render(
