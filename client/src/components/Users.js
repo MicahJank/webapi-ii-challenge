@@ -6,6 +6,8 @@ import { GET_USERS_PENDING, GET_USERS_FAIL, GET_USERS_SUCCESS } from '../reducer
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
+
 const Users = () => {
     const users = useSelector(state => state.usersReducer.users);
     const usersPending = useSelector(state => state.usersReducer.pending);
@@ -30,9 +32,11 @@ const Users = () => {
 
     if (usersPending) {
         return (
-            <div>
-                Loading the users...
-            </div>
+            <>
+            <Dimmer active>
+                    <Loader content='Loading the users...' />
+            </Dimmer>
+            </>
         );
     } else {
         return (
