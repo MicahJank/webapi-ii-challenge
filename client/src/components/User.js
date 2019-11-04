@@ -1,11 +1,17 @@
 import React from 'react';
 
-const User = () => {
+import { Message, Icon } from 'semantic-ui-react';
+
+const User = ( { user } ) => {
 
     return (
-        <div>
-            User
-        </div>
+        <Message>
+            <Icon size='huge' name='spy' />
+            <Message.Header>{user.contents}</Message.Header>
+            <p>
+                {user.title}
+            </p>
+        </Message>
     );
 };
 
